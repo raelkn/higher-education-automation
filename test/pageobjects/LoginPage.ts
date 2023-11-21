@@ -25,11 +25,11 @@ class LoginPage extends BasePage{
     public async clickLoginButton(){
         await this.loginButton.click()
     }
-    public async login(){
+    public async login(username: string , password : string){
         await this.username.click()
-        await this.username.setValue('superadmin')
+        await this.username.setValue(username)
         await this.password.click()
-        await this.password.setValue('DigitalMoE21')
+        await this.password.setValue(password)
         await this.loginButton.click()
 
     }

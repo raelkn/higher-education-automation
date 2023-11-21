@@ -1,5 +1,15 @@
 import type { Options } from '@wdio/types'
 export const config: Options.Testrunner = {
+    services: [
+        ['chromedriver', {
+            logFileName: 'wdio-chromedriver.log', // default
+            outputDir: 'driver-logs', // overwrites the config.outputDir
+            args: ['--silent']
+        }]
+    ],
+    /*services: [
+        ['selenium-standalone', { drivers: { chrome: '119.0.6045.105' } }]
+    ],*/
     //
     // ====================
     // Runner Configuration
@@ -60,7 +70,8 @@ export const config: Options.Testrunner = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
+        browserName: 'chrome',
+        browserVersion: 'stable'
     }],
 
     //
